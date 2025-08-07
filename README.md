@@ -1,2 +1,3 @@
-# psitlite
-A lightweight flutter alternative to original psit erp app.
+# Psitlite
+
+A lightweight flutter app that offers a faster and cleaner alterantive to original PSIT app.
