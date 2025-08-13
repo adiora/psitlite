@@ -18,12 +18,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 class CacheService {
   // In milliseconds
   static const _seldomDuration = 3 * 24 * 60 * 60 * 1000; // 3 days for student details and profile image
-  static const _nomralDuration = 8 * 60 * 60 * 1000; // timetable, marks, olt marks
-  static const _persistentDuration = 14 * 24 * 60 * 60 * 1000; // 14 days for testlist and oltsolution
+  static const _nomralDuration = 4 * 60 * 60 * 1000; // timetable, marks, olt marks
+  static const _persistentDuration = 7 * 24 * 60 * 60 * 1000; // 14 days for testlist and oltsolution
   static const _frequentDuration = 1 * 60 * 60 * 1000; // 1 hour for announcements
   static const _fastDuration = 2 * 60 * 60 * 1000; // 2 hours for attendance
 
-  static const _oldCacheDuration = 2 * 60 * 60 * 1000; // 2 days
+  static const _oldCacheDuration = 2 * 24 * 60 * 60 * 1000; // 2 days
 
   static const _detailsKey = 'details';
   static const _attendanceSummaryKey = 'attSummary';

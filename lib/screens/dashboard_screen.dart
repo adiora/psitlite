@@ -22,8 +22,14 @@ class DashboardScreen extends StatelessWidget {
           padding: const EdgeInsets.all(4),
           child: Row(
             children: [
-              Image.asset(theme.brightness == Brightness.light? 'assets/icon_dark.png' : 'assets/icon_light.png', width: 48, height: 48),
-              const SizedBox(width: 8,),
+              Image.asset(
+                theme.brightness == Brightness.light
+                    ? 'assets/icon_dark.png'
+                    : 'assets/icon_light.png',
+                width: 48,
+                height: 48,
+              ),
+              const SizedBox(width: 8),
               Text('Dashboard', style: theme.textTheme.titleLarge),
             ],
           ),

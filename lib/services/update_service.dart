@@ -59,6 +59,9 @@ class UpdateService {
     final minRequired = data['min_required_version'] ?? currentVersion;
     final updateLink = data['update_link'] ?? '';
     final type = data['type'] ?? '';
+    final updateText = data['updateText'] ?? '';
+    final belowMinText = data['belowMinText'] ?? '';
+    final aboveMinText = data['aboveMinText'] ?? '';
 
     final isBelowMin = _compareVersions(currentVersion, minRequired) < 0;
     final isBelowLatest = _compareVersions(currentVersion, latest) < 0;
@@ -106,15 +109,14 @@ class UpdateService {
               ),
               const SizedBox(height: 16),
               Text(
-                "A newer version of PSiT Lite is available. "
-                "Visit the website to see what's new and download the update.",
+                updateText,
                 style: theme.textTheme.bodyMedium,
               ),
               const SizedBox(height: 12),
               Text(
                 isBelowMin
-                    ? "⚠️ This version is obsolete. Please update to continue using the app."
-                    : "This is a $type update. You can skip it for now, but I'll keep asking :D",
+                    ? belowMinText
+                    : aboveMinText,
                 style: theme.textTheme.bodyMedium!.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
@@ -138,7 +140,7 @@ class UpdateService {
                 if (updateLink.isNotEmpty) {
                   final uri = Uri.parse(updateLink);
                   if (await canLaunchUrl(uri)) {
-                    await launchUrl(uri, mode: LaunchMode.externalApplication);
+                    await launchUrl(uri);
                   }
                 }
               },
