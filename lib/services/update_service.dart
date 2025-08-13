@@ -58,7 +58,6 @@ class UpdateService {
     final latest = data['latest_version'] ?? currentVersion;
     final minRequired = data['min_required_version'] ?? currentVersion;
     final updateLink = data['update_link'] ?? '';
-    final type = data['type'] ?? '';
     final updateText = data['updateText'] ?? '';
     final belowMinText = data['belowMinText'] ?? '';
     final aboveMinText = data['aboveMinText'] ?? '';
